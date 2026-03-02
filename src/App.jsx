@@ -1,18 +1,19 @@
-import { useState, useEffect } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import Xinchao from './Xinchao';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
   const [letters, setLetters] = useState([]);
 
-  useEffect(() => {
-    console.log("App mounted");
+  // Lifecycle: componentDidMount
+  useEffect (() => {
+  console.log("App mounted -län render đầu tiên");
   }, []);
 
-  useEffect(() => {
-    console.log("Letters updated:", letters);
+  // Lifecycle: componentDidUpdate
+  useEffect (() => {
+  console.log("Letters updated:", letters);
   }, [letters]);
 
   const addLetter = (content) => {
@@ -27,8 +28,8 @@ function App() {
 
   return (
     <div>
-      <Xinchao onAdd={addLetter} />
-      <XinchaoList letters={letters} />
+      <LetterForm onAdd={addLetter} />
+      <LetterList letters={letters} />
     </div>
   );
 }
