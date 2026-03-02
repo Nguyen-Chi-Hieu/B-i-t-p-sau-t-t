@@ -1,13 +1,13 @@
-import Xinchaoitem from "./Xinchaoitem";
+import Xinchaoitem from "./Xinchaoitem.jsx";
 
-function Xinchao({ letters }) {
+function XinchaoList({ letters }) {
     return (
         <div style={{ marginTop: "20px" }}>
-        {letters.length === 0 && <p> Chưa có letter nào</p>}
-        {letters.map((letter) => (
+        {letters && letters.length === 0 && <p> Chưa có letter nào</p>}
+        {letters && letters.map((letter) => (
           <Xinchaoitem key={letter.id} letter={letter} />
         ))}
         </div>
     );
 }
-export default Xinchaoitem;
+export default XinchaoList;
